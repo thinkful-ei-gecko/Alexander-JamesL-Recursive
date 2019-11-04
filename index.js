@@ -23,4 +23,30 @@ function powerCalc(base, exp) {
   }
 }
 
-powerCalc(10, 2)
+powerCalc(10, 2);
+
+//#3 Reverse String
+function reverseString(string) {
+  if (string.length === 1)
+  return string[0];
+
+  const char = string[string.length - 1];
+
+  return char + reverseString(string.substring(0, string.length-1));
+  
+}
+
+console.log(reverseString('cromulent'))
+
+//#4 nth Triangular Number
+function triangularNumber(n) {
+  if (n < 1)
+  return 'n is Untriangularable';
+  
+  if (n === 1)
+  return 1;
+  
+  return n + triangularNumber(n-1)
+}
+
+console.log(triangularNumber(5))
