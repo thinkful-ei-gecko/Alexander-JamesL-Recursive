@@ -50,3 +50,19 @@ function triangularNumber(n) {
 }
 
 console.log(triangularNumber(5))
+
+//#5 String Splitter
+
+function stringSplitter(string, splitter) {
+  
+  let splitIndex = string.indexOf(splitter)
+  
+  if (splitIndex === -1)
+  return [string]
+  
+  return [string.slice(0, splitIndex)]
+    .concat(stringSplitter(string.slice(splitIndex + splitter.length), splitter));
+}
+
+
+console.log(stringSplitter('02/20/2020', '/'))
